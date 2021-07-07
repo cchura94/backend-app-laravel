@@ -1,0 +1,14 @@
+POST http://127.0.0.1:8000/api/auth/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "email": "cchura.cpc@gmail.com",
+    "password": "cristian123"
+}
+
+###
+
+GET http://127.0.0.1:8000/api/auth/perfil
+Accept: application/json
+Authorization: Bearer 3|SjmpTzHEkR4p6vwSv9KroXa5vtSjQ2BZE2K5Z6Je
