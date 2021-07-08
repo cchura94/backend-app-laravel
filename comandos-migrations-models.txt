@@ -1,0 +1,8 @@
+php artisan make:model Categoria -m
+php artisan make:model Producto -m
+php artisan make:model Persona -m
+
+php artisan make:model Personal -m
+php artisan make:model Pedido -m
+
+php artisan make:migration create_pedido_productos_table
