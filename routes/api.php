@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoriaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,3 +25,5 @@ Route::post("/auth/login", [AuthController::class, "login"]);
 Route::post("/auth/logout", [AuthController::class, "logout"]);
 
 Route::get("/auth/perfil", [AuthController::class, "perfil"])->middleware('auth:sanctum');
+
+Route::apiResource("categoria", CategoriaController::class);

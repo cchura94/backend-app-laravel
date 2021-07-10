@@ -15,6 +15,15 @@ class CreatePersonalsTable extends Migration
     {
         Schema::create('personals', function (Blueprint $table) {
             $table->id();
+
+            $table->string("item", 20);
+            $table->bigInteger("persona_id")->unsigned();
+            $table->bigInteger("user_id")->unsigned();
+            
+            $table->foreign("persona_id")->references("id")->on("personas");
+            $table->foreign("user_id")->references("id")->on("users");
+
+            $table->softDeletes();
             $table->timestamps();
         });
     }
