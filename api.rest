@@ -11,4 +11,10 @@ Accept: application/json
 
 GET http://127.0.0.1:8000/api/auth/perfil
 Accept: application/json
-Authorization: Bearer 3|SjmpTzHEkR4p6vwSv9KroXa5vtSjQ2BZE2K5Z6Je
+Authorization: Bearer 30|EtjLF1wS3ELm3oNIO6wwDVvDWvdAbpY0e5KmhyeE
+
+###
+
+GET http://127.0.0.1:8000/api/categoria
+Accept: application/json
+Authorization: Bearer 32|CBw6XzlFOjQiqoIoyBSVUiszfhvVmntF2AVH2DzT

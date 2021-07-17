@@ -9,4 +9,20 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Pedido extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function productos()
+    {
+        return $this->belongsToMany(Producto::class);
+    }
+
+    // cliente
+    public function persona()
+    {
+        return $this->belongsTo(Persona::class);
+    }
+
+    public function personal()
+    {
+        return $this->belongsTo(Personal::class);
+    }
 }

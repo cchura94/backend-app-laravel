@@ -1,0 +1,12 @@
+Clonar un rpyecto de Laravel desde github
+
+1. clonar el repositorio
+ > git clone https://github.com/cchura94/backend-app-laravel.git
+ > cd backend-app-laravel
+ > composer update
+
+2. Configurar el archivo .env
+ - copiar el archivo .env.example con el nombre (.env)
+ - generar una llave (hash) con el comando
+    > php artisan key:generate
+3. Lo probamos

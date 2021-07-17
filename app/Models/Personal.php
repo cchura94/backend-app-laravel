@@ -9,4 +9,14 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Personal extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function pedidos()
+    {
+        return $this->hasMany(Pedido::class);
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class);
+    }
 }
