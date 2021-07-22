@@ -25,5 +25,7 @@ Route::post("/auth/login", [AuthController::class, "login"]);
 Route::post("/auth/logout", [AuthController::class, "logout"]);
 
 Route::get("/auth/perfil", [AuthController::class, "perfil"])->middleware('auth:sanctum');
+Route::get("/auth/refresh", [AuthController::class, "refresh"])->middleware('auth:sanctum');
+
 
 Route::apiResource("categoria", CategoriaController::class)->middleware('auth:sanctum');

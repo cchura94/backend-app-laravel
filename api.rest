@@ -11,10 +11,15 @@ Accept: application/json
 
 GET http://127.0.0.1:8000/api/auth/perfil
 Accept: application/json
-Authorization: Bearer 30|EtjLF1wS3ELm3oNIO6wwDVvDWvdAbpY0e5KmhyeE
+Authorization: Bearer 62|vMvspEZCWO5lmWS7H65rVK6qxmqVqM1eUngxwWdz
 
 ###
 
 GET http://127.0.0.1:8000/api/categoria
 Accept: application/json
-Authorization: Bearer 32|CBw6XzlFOjQiqoIoyBSVUiszfhvVmntF2AVH2DzT
+Authorization: Bearer 47|wbXnEdLw7QDU4sVNefFsbqw7zcgxWrcipzFnW9iU
+
+### 
+GET http://127.0.0.1:8000/api/auth/refresh
+Accept: application/json
+Authorization: Bearer 63|A9g6L6I6d0fqwoGb8TKMIOdXWOy29TbKgyx5z8AF
