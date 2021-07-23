@@ -19,4 +19,10 @@ class Personal extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function persona()
+    {
+        return $this->hasOne(Persona::class);
+    }
+
 }

@@ -2,6 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\PedidoController;
+use App\Http\Controllers\PersonaController;
+use App\Http\Controllers\PersonalController;
+use App\Http\Controllers\ProductoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +32,14 @@ Route::get("/auth/perfil", [AuthController::class, "perfil"])->middleware('auth:
 Route::get("/auth/refresh", [AuthController::class, "refresh"])->middleware('auth:sanctum');
 
 
-Route::apiResource("categoria", CategoriaController::class)->middleware('auth:sanctum');
+Route::middleware(['auth:sanctum'])->prefix('admin')->group(function () {
+    Route::apiResource("categoria", CategoriaController::class);
+    Route::apiResource("producto", ProductoController::class);
+    Route::apiResource("persona", PersonaController::class);
+    Route::apiResource("personal", PersonalController::class);
+    Route::apiResource("pedido", PedidoController::class);
+
+});
+
+Route::post("/admin/guarda_prod", [ProductoController::class, "guardarProducto"]);
+

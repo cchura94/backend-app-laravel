@@ -23,3 +23,33 @@ Authorization: Bearer 47|wbXnEdLw7QDU4sVNefFsbqw7zcgxWrcipzFnW9iU
 GET http://127.0.0.1:8000/api/auth/refresh
 Accept: application/json
 Authorization: Bearer 63|A9g6L6I6d0fqwoGb8TKMIOdXWOy29TbKgyx5z8AF
+
+
+###
+POST http://127.0.0.1:8000/api/admin/guarda_prod
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 151|xobY9j84e9sqeXzwhu4KosErirMfbDCIwYoH5Piw
+
+{
+    "nombre": "Estante 2",
+    "precio": 500,
+    "categoria_id": 1
+}
+
+###
+POST http://127.0.0.1:8000/api/admin/producto
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer 151|xobY9j84e9sqeXzwhu4KosErirMfbDCIwYoH5Piw
+
+{
+    "nombre": "Estante 4",
+    "precio": 1800,
+    "stock": 90,
+    "categoria_id": 1
+}
+###
+GET http://127.0.0.1:8000/api/admin/producto
+Accept: application/json
+Authorization: Bearer 149|1moVgACqBQO23XZq9ORo5vpNdF4JT7dWsphrd7vU

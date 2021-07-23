@@ -19,4 +19,46 @@ class Producto extends Model
     {
         return $this->belongsToMany(Pedido::class);
     }
+
+    /**
+     * Esta función me permite guardar datos de
+     * productos en la base de datos
+     */
+    public function guardar($datos)
+    {
+        $this->nombre = $datos->nombre;
+        $this->precio = $datos->precio;
+        $this->categoria_id = $datos->categoria_id;
+        $this->save();
+    }
+
+    /*
+    protected $fillable = [
+        'nombre',
+        'precio',
+        'stock',
+    ];*/
+    /*
+    public function addUsuario($datos) {
+
+        $data = array(
+            'nombre_usuario' => $datos['nombre_usuario'],
+            'usuario' => $datos['usuario'],
+            'clave' => $datos['clave'],
+            'role' => $datos['role'],
+            'estado_usuario' => 'ACTIVO',
+            'usuario_registrado_fecha' => date('Y-m-d'),
+            'usuario_modificado_fecha' => '0000-00-00',
+            'usuario_registrado_hora' => date('H:i:s'),
+            'usuario_modificado_hora' => '0000-0',
+             'estado_usuario' => 'ACTIVO',
+            'usuario_registrado_fecha' => date('Y-m-d'),
+            'usuario_modificado_fecha' => '0000-00-00',
+            'usuario_registrado_hora' => date('H:i:s'),
+            'usuario_modificado_hora' => '0000-00-00',
+        );
+
+        $this->insert($data);
+    }
+    */
 }

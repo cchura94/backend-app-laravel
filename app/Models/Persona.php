@@ -14,4 +14,10 @@ class Persona extends Model
     {
         return $this->hasMany(Pedido::class);
     }
+
+    public function personal()
+    {
+        return $this->belongsTo(Personal::class);
+    }
+
 }
