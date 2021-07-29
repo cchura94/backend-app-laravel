@@ -17,7 +17,7 @@ class Persona extends Model
 
     public function personal()
     {
-        return $this->belongsTo(Personal::class);
+        return $this->hasOne(Personal::class);
     }
 
 }

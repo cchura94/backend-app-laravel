@@ -73,8 +73,8 @@ class ProductoController extends Controller
         if($file = $request->file("imagen")){
             // nombre original el archivo
             $nom_archivo = $file->getClientOriginalName();
-            $file->move("imagenes/productos", $nom_archivo);
-            $nom_img = "imagenes/productos" . $nom_archivo;
+            $file->move("imagenes/productos/", $nom_archivo);
+            $nom_img = "imagenes/productos/" . $nom_archivo;
 
         }
         // guardar
@@ -115,7 +115,7 @@ class ProductoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id, Request $request)
     {
          // validar
          $request->validate([
@@ -131,7 +131,17 @@ class ProductoController extends Controller
         $producto->precio = $request->precio;
         $producto->stock = $request->stock;
         $producto->descripcion = $request->descripcion;
-        $producto->imagen = $nom_img;
+
+        $nom_img = "";
+        if($file = $request->file("imagen")){
+            // nombre original el archivo
+            $nom_archivo = $file->getClientOriginalName();
+            $file->move("imagenes/productos/", $nom_archivo);
+            $nom_img = "imagenes/productos/" . $nom_archivo;
+
+            $producto->imagen = $nom_img;
+        }
+        
         $producto->categoria_id = $request->categoria_id;
         $producto->save();
 
