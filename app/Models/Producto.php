@@ -17,7 +17,9 @@ class Producto extends Model
 
     public function pedidos()
     {
-        return $this->belongsToMany(Pedido::class);
+        // Relación entre Producto con pedidos (N:M) 
+        // indicando el nombre de la tabla relación pedido_productos
+        return $this->belongsToMany(Pedido::class, "pedido_productos");
     }
 
     /**
